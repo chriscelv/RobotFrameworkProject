@@ -6,29 +6,35 @@ Suite Teardown  Closing browser
 
 *** Test Cases ***
 Alerts
-    set selenium speed  2 seconds
-    click button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
+    Set Selenium Speed  2 seconds
+    Click Button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
     #clicks ok button on alert
-    handle alert  accept
+    Handle Alert  accept
 
-    click button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
+    Click Button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
     #clicks cancel on alert
-    handle alert  dismiss
+    Handle Alert  dismiss
 
-    click button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
+    Click Button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
     #verify text on alert window
-    alert should be present  Press a button!    #accepts by default
+    Alert Should Be Present  Press a button!    #accepts by default
 
     #click button    xpath://div[@class="widget-content"]/button[text()="Click Me"]
     #verify the text not there in the alert window
     #alert should not be present     test data
 
 Browser Commands
-    go to   ${anotherURL}
-    go back
+    Go To   ${anotherURL}
+    Go Back
 
 
 Drag And Drop
-    drag and drop   xpath://*[@id="gallery"]/li[2]/img      xpath://*[@id="trash"]
-    drag and drop   xpath://*[@id="gallery"]/li[1]/img      xpath://*[@id="trash"]
-    drag and drop   xpath://*[@id="draggable"]/p             xpath://*[@id="droppable"]
+    Drag and Drop   xpath://*[@id="gallery"]/li[2]/img      xpath://*[@id="trash"]
+    Drag and Drop   xpath://*[@id="gallery"]/li[1]/img      xpath://*[@id="trash"]
+    Drag and Drop   xpath://*[@id="draggable"]/p             xpath://*[@id="droppable"]
+
+Dropdown
+    Select From List By Index       speed           2
+    Select From List By Value       files           3
+    Select From List By Label       products        Iphone
+

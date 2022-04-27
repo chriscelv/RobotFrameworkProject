@@ -7,10 +7,10 @@ ${browser}      chrome
 ${anotherURL}                         https://google.com
 
 *** Keywords ***
-Opening browser
-    open browser    ${blogspot}      ${browser}
-    maximize browser window
+Opening Browser
+    Open Browser    ${blogspot}      ${browser}
+    Maximize Browser Window
 
-Closing browser
+Closing Browser
     close all browsers
 
